@@ -1,1 +1,19 @@
-<p>inicio works!</p>
+<div class="dashboardLayout">
+  <app-sidebar activeLink="Inicio" />
+  <div class="cardsFlex">
+    <app-balance-card
+      greeting="Olá, Joana! :)"
+      date="Quinta-feira, 06/06/2024"
+      [balance]="balance"
+      accountType="Conta Corrente"
+    />
+    <app-transaction-form (onAddTransaction)="handleAddTransaction($event)" />
+  </div>
+  <div class="newTransactionSection">
+    <app-statement-card
+      [items]="transactions"
+      (onDeleteTransaction)="handleDeleteTransaction($event)"
+      (onEditTransaction)="handleEditTransaction($event)"
+    />
+  </div>
+</div>
