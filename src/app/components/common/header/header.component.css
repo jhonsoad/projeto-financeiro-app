@@ -1,0 +1,107 @@
+.header {
+  background-color: var(--color-black);
+  padding: var(--spacing-lg) 0;
+}
+
+/* Estilos para o cabeçalho quando o usuário está logado */
+.loggedInHeader {
+  background-color: var(--color-bg-blue);
+  padding: var(--spacing-lg) 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoNav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.nav a {
+  margin-right: var(--spacing-xl);
+  font-weight: var(--font-weight-medium);
+  transition: opacity 0.2s ease-in-out;
+  color: var(--color-quinary);
+}
+
+.nav a:last-child {
+  margin-right: 0;
+}
+
+.nav a:hover {
+  opacity: 0.8;
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+/* Estilos específicos para botões no header se necessário */
+.actions :global(.button.outline) {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.actions :global(.button.outline:hover) {
+  background-color: var(--color-white);
+  color: var(--color-bg-blue);
+}
+
+/* --- Estilos para a área logada --- */
+.loggedInContent {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  gap: var(--spacing-3xl);
+}
+
+.userName {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-text-small);
+  color: var(--color-white);
+}
+
+.userIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media (max-width: var(--breakpoint-tablet)) {
+  .logoNav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Ajustes para a versão logada em mobile, se necessário */
+  .loggedInContent {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
