@@ -1,1 +1,40 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="container">
+    <div class="footerColumn">
+      <h3 class="columnTitle">Serviços</h3>
+      <a routerLink="/conta-corrente">Conta corrente</a>
+      <a routerLink="/conta-pj">Conta PJ</a>
+      <a routerLink="/cartao-credito">Cartão de crédito</a>
+    </div>
+
+    <div class="footerColumn">
+      <h3 class="columnTitle">Contato</h3>
+      <span>0800 004 250 08</span>
+      <span>{{ meAjudaLink }}</span>
+      <span>{{ ouvidoriaLink }}</span>
+    </div>
+
+    <div class="footerColumn developedBy">
+      <h3 class="columnTitle">Desenvolvido por Alura</h3>
+      <a routerLink="/">
+        <img
+          src="/logo-branco.svg"
+          alt="ByteBank Logo"
+          width="145"
+          height="32"
+        />
+      </a>
+      <div class="socialIcons">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <img src="/instagram.svg" alt="Instagram" width="29" height="29" />
+        </a>
+        <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer">
+          <img src="/whatsapp.svg" alt="WhatsApp" width="29" height="29" />
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+          <img src="/youtube.svg" alt="YouTube" width="29" height="29" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
