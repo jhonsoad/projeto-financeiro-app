@@ -5,5 +5,7 @@
     [type]="type"
     [placeholder]="placeholder"
     [class]="'input ' + className"
+    [value]="value"
+    (input)="onInput($event)"
   />
 </div>

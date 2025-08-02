@@ -1,1 +1,20 @@
-<p>transaction-form works!</p>
+<form class="form" (ngSubmit)="handleSubmit()">
+  <h3 class="title">Nova transação</h3>
+  <p *ngIf="errorMessage" class="errorMessage">{{ errorMessage }}</p>
+  <app-dropdown
+    [options]="transactionOptions"
+    [(ngModel)]="transactionType"
+    name="transactionType"
+  ></app-dropdown>
+  <app-input
+    label="Valor"
+    type="text"
+    step="0.01"
+    placeholder="00,00"
+    [value]="value"
+    (input)="handleValueChange($event)"
+  ></app-input>
+  <app-button type="submit" variant="secondary" class="submitButton">
+    Concluir transação
+  </app-button>
+</form>
