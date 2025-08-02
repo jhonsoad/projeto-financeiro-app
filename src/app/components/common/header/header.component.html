@@ -1,0 +1,34 @@
+<header [ngClass]="{'header': true, 'loggedInHeader': isLoggedIn}">
+  <div class="container">
+    <div *ngIf="isLoggedIn" class="loggedInContent">
+      <span class="userName">{{ userName }}</span>
+      <div class="userIcon">
+        <img src="/user-icon.svg" alt="User Icon" width="40" height="40" />
+      </div>
+    </div>
+
+    <div *ngIf="!isLoggedIn" class="logoNav">
+      <a routerLink="/">
+        <img
+          src="/logo.svg"
+          alt="ByteBank Logo"
+          width="120"
+          height="30"
+        />
+      </a>
+      <nav class="nav">
+        <a routerLink="/sobre">Sobre</a>
+        <a routerLink="/servicos">Serviços</a>
+      </nav>
+    </div>
+    
+    <div *ngIf="!isLoggedIn" class="actions">
+      <a routerLink="/dashboard">
+        <app-button variant="primary">Abrir minha conta</app-button>
+      </a>
+      <a routerLink="/dashboard">
+        <app-button variant="outline">Já tenho conta</app-button>
+      </a>
+    </div>
+  </div>
+</header>

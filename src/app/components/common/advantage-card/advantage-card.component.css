@@ -1,0 +1,24 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: var(--border-radius-md);
+  max-width: 282px;
+}
+
+.iconContainer {
+  margin-bottom: var(--spacing-md);
+}
+
+.title {
+  font-size: var(--font-size-title-h3);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-quinary);
+}
+
+.description {
+  font-size: var(--font-size-text);
+  color: var(--color-text-light);
+}

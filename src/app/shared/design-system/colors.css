@@ -1,0 +1,18 @@
+:root {
+
+  --color-secondary: #FF5031; /* laranja */
+  --color-tertiary: #DEE9EA; /* cinza claro */
+  --color-quaternary: #F8F8F8; /* quase branco */
+  --color-quinary: #47A138; /* verde */
+  --color-bg-gradient: linear-gradient(to bottom, #004D61, #FFFFFF); /* Gradiente da primária para branco */
+  --color-bg-green: #E4EDE3; /* verde claro */
+  --color-bg-blue: #004D61; /* azul mais escuro */
+  --color-bg-white: #F5F5F5; /* verde claro */
+  --color-bg-gray: #CBCBCB; /* cinza */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-text-dark: #444444; /* Cor comum para texto escuro */
+  --color-text-light: #666666; /* Cor comum para texto mais claro */
+  --color-gray: #8B8B8B;
+  
+}

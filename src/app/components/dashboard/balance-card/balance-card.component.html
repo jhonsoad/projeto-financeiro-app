@@ -1,0 +1,13 @@
+<div class="card">
+  <h2 class="greeting">{{ greeting }}</h2>
+  <p class="date">{{ date }}</p>
+  <div class="balanceInfo">
+    <div class="balanceSaldo">
+      <p class="balanceLabel">Saldo</p>
+      <img src="/icon-olho.svg" alt="icone de um olho" width="20" height="20" />
+    </div>
+    <hr class="balanceHr"/>
+    <p class="accountType">{{ accountType }}</p>
+    <span class="balanceValue">R$ {{ (balance | number: '1.2-2') ?? '' | replaceComma }}</span>
+  </div>
+</div>

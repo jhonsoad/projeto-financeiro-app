@@ -1,0 +1,32 @@
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacing-lg);
+
+}
+
+.label {
+  font-size: var(--font-size-text);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-bg-blue); /*color: var(--color-tertiary); /* mudado por contraste */
+  margin-bottom: var(--spacing-md)
+}
+
+.input {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-bg-blue);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-text);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-dark);
+  background-color: var(--color-white);
+  transition: border-color 0.2s ease-in-out;
+  text-align: center;
+  width: 255px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-bg-blue);
+  box-shadow: 0 0 0 2px rgba(0, 77, 97, 0.2); /* Sombra suave no foco */
+}
