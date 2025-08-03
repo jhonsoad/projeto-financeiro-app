@@ -47,11 +47,22 @@
 						"assets": [
 							{
 								"glob": "**/*",
-								"input": "public"
+								"input": "public",
+								"output": "/"
+							},
+							{
+								"glob": "**/*",
+								"input": "src/assets",
+								"output": "assets"
 							}
 						],
 						"styles": [
-							"src/styles.css"
+							"src/styles.css",
+							"src/app/shared/design-system/breakpoints.css",
+							"src/app/shared/design-system/colors.css",
+							"src/app/shared/design-system/spacing.css",
+							"src/app/shared/design-system/typography.css",
+							"src/app/shared/design-system/variables.css"
 						],
 						"scripts": []
 					}
@@ -70,11 +81,22 @@
 						"assets": [
 							{
 								"glob": "**/*",
-								"input": "public"
+								"input": "public",
+								"output": "/"
+							},
+							{
+								"glob": "**/*",
+								"input": "src/assets",
+								"output": "assets"
 							}
 						],
 						"styles": [
-							"src/styles.css"
+							"src/styles.css",
+							"src/app/shared/design-system/breakpoints.css",
+							"src/app/shared/design-system/colors.css",
+							"src/app/shared/design-system/spacing.css",
+							"src/app/shared/design-system/typography.css",
+							"src/app/shared/design-system/variables.css"
 						],
 						"scripts": []
 					},
