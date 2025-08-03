@@ -15,7 +15,6 @@ import { environment } from '../../../../environments/environment';
 })
 export class StatementListComponent implements OnInit {
 
-  // Eventos emitidos para o componente pai
   @Output() onEditRequest = new EventEmitter<Movement>();
   @Output() onDeleteRequest = new EventEmitter<number>();
 
@@ -25,39 +24,29 @@ export class StatementListComponent implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    // A lógica de busca e formatação dos dados fica aqui, longe do componente pai
     this.transacoes$ = this.store.select(selectMovimentacoes).pipe(
       map(movimentacoes => movimentacoes.slice(-8).reverse())
     );
   }
 
-  // Métodos de formatação
   capitalizeFirstLetter(string: string): string {
     if (!string) return '';
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  getMonthName(dateString: string): string {
-    const parts = dateString.split('/');
-    const day = parseInt(parts[0], 10);
-    const month = parseInt(parts[1], 10) - 1;
-    const year = parseInt(parts[2], 10);
-    const date = new Date(year, month, day);
-
-    if (isNaN(date.getTime())) {
-      console.warn('Data inválida para getMonthName:', dateString);
-      return 'Mês Inválido';
+  getMonthName(dateString: string | undefined): string {
+    if (!dateString) {
+      return 'Mês não informado';
     }
-
-    const monthName = new Intl.DateTimeFormat('pt-BR', { month: 'long' }).format(date);
-    return this.capitalizeFirstLetter(monthName);
+    const [year, month] = dateString.split('-');
+    const date = new Date(parseInt(year), parseInt(month) - 1, 1);
+    return date.toLocaleString('pt-BR', { month: 'long' });
   }
 
   getAbsolute(value: number): number {
     return Math.abs(value);
   }
 
-  // Métodos que emitem eventos
   handleEditClick(item: Movement): void {
     this.onEditRequest.emit(item);
   }

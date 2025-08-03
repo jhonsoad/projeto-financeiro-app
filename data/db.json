@@ -1,502 +1,522 @@
 {
   "finance": [
     {
-      "id": 1,
+      "id": "1",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-01"
     },
     {
-      "id": 2,
+      "id": "2",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-02"
     },
     {
-      "id": 3,
+      "id": "3",
       "movementType": "TRANSFERENCIA",
       "amount": 10,
       "date": "2025-07-22"
     },
     {
-      "id": 4,
+      "id": "4",
       "movementType": "TRANSFERENCIA",
       "amount": 1000,
       "date": "2024-10-04"
     },
     {
-      "id": 5,
+      "id": "5",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-05"
     },
     {
-      "id": 6,
+      "id": "6",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-06"
     },
     {
-      "id": 7,
+      "id": "7",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2025-07-22"
     },
     {
-      "id": 8,
+      "id": "8",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-08"
     },
     {
-      "id": 9,
+      "id": "9",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-09"
     },
     {
-      "id": 10,
+      "id": "10",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-10"
     },
     {
-      "id": 11,
+      "id": "11",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-11"
     },
     {
-      "id": 12,
+      "id": "12",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-12"
     },
     {
-      "id": 13,
+      "id": "13",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-13"
     },
     {
-      "id": 14,
+      "id": "14",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-14"
     },
     {
-      "id": 15,
+      "id": "15",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-15"
     },
     {
-      "id": 16,
+      "id": "16",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-16"
     },
     {
-      "id": 17,
+      "id": "17",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-17"
     },
     {
-      "id": 18,
+      "id": "18",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-18"
     },
     {
-      "id": 19,
+      "id": "19",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-19"
     },
     {
-      "id": 20,
+      "id": "20",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-20"
     },
     {
-      "id": 21,
+      "id": "21",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-21"
     },
     {
-      "id": 22,
+      "id": "22",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-22"
     },
     {
-      "id": 23,
+      "id": "23",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-23"
     },
     {
-      "id": 24,
+      "id": "24",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-24"
     },
     {
-      "id": 25,
+      "id": "25",
       "movementType": "DEPOSITO",
       "amount": 500,
       "date": "2024-10-25"
     },
     {
-      "id": 26,
+      "id": "26",
       "movementType": "DEPOSITO",
       "amount": 5000,
       "date": "2024-10-26"
     },
     {
-      "id": 27,
+      "id": "27",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-27"
     },
     {
-      "id": 28,
+      "id": "28",
       "movementType": "TRANSFERENCIA",
       "amount": 400,
       "date": "2024-10-28"
     },
     {
-      "id": 29,
+      "id": "29",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-29"
     },
     {
-      "id": 30,
+      "id": "30",
       "movementType": "DEPOSITO",
       "amount": 1200,
       "date": "2024-10-30"
     },
     {
-      "id": 31,
+      "id": "31",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-31"
     },
     {
-      "id": 32,
+      "id": "32",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-11-01"
     },
     {
-      "id": 33,
+      "id": "33",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-11-02"
     },
     {
-      "id": 34,
+      "id": "34",
       "movementType": "DEPOSITO",
       "amount": 1000,
       "date": "2024-11-03"
     },
     {
-      "id": 35,
+      "id": "35",
       "movementType": "TRANSFERENCIA",
       "amount": 0.1,
       "date": "2024-11-04"
     },
     {
-      "id": 36,
+      "id": "36",
       "movementType": "TRANSFERENCIA",
       "amount": 100,
       "date": "2024-11-05"
     },
     {
-      "id": 37,
+      "id": "37",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-11-06"
     },
     {
-      "id": 38,
+      "id": "38",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-11-07"
     },
     {
-      "id": 39,
+      "id": "39",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-11-08"
     },
     {
-      "id": 40,
+      "id": "40",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-11-09"
     },
     {
-      "id": 1,
+      "id": "1",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-01"
     },
     {
-      "id": 2,
+      "id": "2",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-02"
     },
     {
-      "id": 3,
+      "id": "3",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-03"
     },
     {
-      "id": 4,
+      "id": "4",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-04"
     },
     {
-      "id": 5,
+      "id": "5",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-05"
     },
     {
-      "id": 6,
+      "id": "6",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-06"
     },
     {
-      "id": 7,
+      "id": "7",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-07"
     },
     {
-      "id": 8,
+      "id": "8",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-08"
     },
     {
-      "id": 9,
+      "id": "9",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-09"
     },
     {
-      "id": 10,
+      "id": "10",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-10"
     },
     {
-      "id": 11,
+      "id": "11",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-11"
     },
     {
-      "id": 12,
+      "id": "12",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-12"
     },
     {
-      "id": 13,
+      "id": "13",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-13"
     },
     {
-      "id": 14,
+      "id": "14",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-14"
     },
     {
-      "id": 15,
+      "id": "15",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-15"
     },
     {
-      "id": 16,
+      "id": "16",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-16"
     },
     {
-      "id": 17,
+      "id": "17",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-17"
     },
     {
-      "id": 18,
+      "id": "18",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-18"
     },
     {
-      "id": 19,
+      "id": "19",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-19"
     },
     {
-      "id": 20,
+      "id": "20",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-20"
     },
     {
-      "id": 21,
+      "id": "21",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-21"
     },
     {
-      "id": 22,
+      "id": "22",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-22"
     },
     {
-      "id": 23,
+      "id": "23",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-23"
     },
     {
-      "id": 24,
+      "id": "24",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-24"
     },
     {
-      "id": 25,
+      "id": "25",
       "movementType": "DEPOSITO",
       "amount": 500,
       "date": "2024-10-25"
     },
     {
-      "id": 26,
+      "id": "26",
       "movementType": "DEPOSITO",
       "amount": 5000,
       "date": "2024-10-26"
     },
     {
-      "id": 27,
+      "id": "27",
       "movementType": "TRANSFERENCIA",
       "amount": 0.01,
       "date": "2024-10-27"
     },
     {
-      "id": 28,
+      "id": "28",
       "movementType": "TRANSFERENCIA",
       "amount": 400,
       "date": "2024-10-28"
     },
     {
-      "id": 29,
+      "id": "29",
       "movementType": "DEPOSITO",
       "amount": 0.01,
       "date": "2024-10-29"
     },
     {
-      "id": 2937,
+      "id": "2937",
       "movementType": "DEPOSITO",
       "amount": 100,
       "date": "2025-07-20"
     },
     {
-      "id": 6268,
+      "id": "6268",
       "movementType": "DEPOSITO",
       "amount": 100,
       "date": "2025-07-20"
     },
     {
-      "id": 2160,
+      "id": "2160",
       "movementType": "DEPOSITO",
       "amount": 1,
       "date": "2025-07-20"
     },
     {
-      "id": 6339,
+      "id": "6339",
       "movementType": "TRANSFERENCIA",
       "amount": 100,
       "date": "2025-07-20"
     },
     {
-      "id": 7890,
+      "id": "7890",
       "movementType": "DEPOSITO",
       "amount": 100,
       "date": "2025-07-20"
     },
     {
-      "id": 4470,
+      "id": "4470",
       "movementType": "TRANSFERENCIA",
       "amount": 1100,
       "date": "2025-07-22"
     },
     {
-      "id": 2864,
+      "id": "2864",
       "movementType": "DEPOSITO",
       "amount": 1100,
       "date": "2025-07-22"
     },
     {
-      "id": 9329,
+      "id": "9329",
       "movementType": "DEPOSITO",
       "amount": 1100,
       "date": "2025-07-22"
     },
     {
-      "id": 2902,
+      "id": "2902",
       "movementType": "DEPOSITO",
       "amount": 1000,
       "date": "2025-07-23"
     },
     {
-      "id": 3,
+      "id": "3",
       "movementType": "TRANSFERENCIA",
       "amount": 10,
       "date": "2025-07-22"
     },
     {
-      "id": 4,
+      "id": "4",
       "movementType": "TRANSFERENCIA",
       "amount": 1000,
       "date": "2024-10-04"
     },
     {
-      "id": 9713,
+      "id": "9713",
       "movementType": "DEPOSITO",
       "amount": 1,
       "date": "2025-07-26"
     },
     {
-      "id": 3764,
+      "id": "3764",
       "movementType": "DEPOSITO",
       "amount": 100,
       "date": "2025-07-26"
     },
     {
-      "id": 281,
+      "id": "281",
       "movementType": "DEPOSITO",
       "amount": 100,
       "date": "2025-07-26"
+    },
+    {
+      "id": "e710",
+      "movementType": "DEPOSITO",
+      "amount": 50
+    },
+    {
+      "id": "1835",
+      "movementType": "TRANSFERENCIA",
+      "amount": -10
+    },
+    {
+      "id": "3358",
+      "movementType": "DEPOSITO",
+      "amount": 10
+    },
+    {
+      "id": "f97e",
+      "movementType": "TRANSFERENCIA",
+      "amount": -200
     }
   ]
 }

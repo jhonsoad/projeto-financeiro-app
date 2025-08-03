@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Renderer2, ElementRef, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DropdownComponent } from '../../common/dropdown/dropdown.component';
@@ -7,14 +7,18 @@ import { ButtonComponent } from '../../common/button/button.component';
 import { Movement } from '../../../shared/interfaces/finance.interface';
 import { MovementType } from '../../../shared/enum/tipo-movimentacao.enum';
 import { environment } from '../../../../environments/environment';
+import { Store } from '@ngrx/store';
+import { addTrasaction } from '../../../shared/store/transaction.actions';
+import { PostSaldoService } from '../../../services/post-saldo-conta/post-saldo-conta.service';
+
 @Component({
   selector: 'app-transaction-form',
+  standalone: true,
   imports: [CommonModule, FormsModule, DropdownComponent, InputComponent, ButtonComponent],
   templateUrl: './transaction-form.component.html',
   styleUrl: './transaction-form.component.css'
 })
-export class TransactionFormComponent implements OnInit {
-  @Output() onAddTransaction = new EventEmitter<Omit<Movement, 'id' | 'date'>>();
+export class TransactionFormComponent {
 
   transactionOptions = [
     { label: 'Selecione...', value: '' },
@@ -27,14 +31,10 @@ export class TransactionFormComponent implements OnInit {
   errorMessage: string | null = null;
   baseUrl = environment.remoteBaseUrl;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {
-
-  }
-
-  ngOnInit() {
-    this.renderer.setStyle(this.el.nativeElement, '--image-url', `url(${this.baseUrl}/assets/images/image-top-right.svg)`);
-    // this.renderer.setStyle(this.el.nativeElement, '--image-url2', `url(${this.baseUrl}/assets/images/image-top-right.svg)`);
-  }
+  constructor(
+    private postSaldoService: PostSaldoService,
+    private store: Store
+  ) {}
 
   handleSubmit(): void {
     this.errorMessage = null;
@@ -52,9 +52,25 @@ export class TransactionFormComponent implements OnInit {
     }
 
     const finalAmount = (this.transactionType === MovementType.TRANSFERENCIA) ? -Math.abs(amount) : Math.abs(amount);
-    this.onAddTransaction.emit({ movementType: this.transactionType, amount: finalAmount });
-    this.transactionType = '';
-    this.value = '';
+
+    // A API json-server irá gerar o `id` e a `date`
+    const newTransaction = {
+      movementType: this.transactionType,
+      amount: finalAmount
+    } as Movement;
+
+    this.postSaldoService.adicionarTransacao(newTransaction).subscribe({
+      next: (movimento) => {
+        // Despacha a ação com a transação completa retornada pela API
+        this.store.dispatch(addTrasaction({ movement: movimento }));
+        this.transactionType = '';
+        this.value = '';
+      },
+      error: (err) => {
+        this.errorMessage = 'Ocorreu um erro ao adicionar a transação.';
+        console.error(err);
+      }
+    });
   }
 
   handleValueChange(event: Event): void {
