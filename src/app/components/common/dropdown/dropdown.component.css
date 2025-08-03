@@ -19,7 +19,7 @@
   cursor: pointer;
   width: 355px;
   appearance: none; /* Remove a seta padrão do navegador */
-  background-image: url('/icon-seta.svg');
+  background-image: url('../../../../assets/icons/icon-seta.svg');
   background-repeat: no-repeat;
   background-position: right var(--spacing-lg) center;
 }

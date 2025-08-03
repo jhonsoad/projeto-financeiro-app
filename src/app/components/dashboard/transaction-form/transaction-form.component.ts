@@ -4,14 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { DropdownComponent } from '../../common/dropdown/dropdown.component';
 import { InputComponent } from '../../common/input/input.component';
 import { ButtonComponent } from '../../common/button/button.component';
-
-export interface Transaction {
-  id: string;
-  type: string;
-  amount: number;
-  date: string;
-}
-
+import { Movimentacao } from '../../../shared/interfaces/finance.interface';
+import { TipoMovimentacao } from '../../../shared/enum/tipo-movimentacao.enum';
 @Component({
   selector: 'app-transaction-form',
   imports: [CommonModule, FormsModule, DropdownComponent, InputComponent, ButtonComponent],
@@ -19,15 +13,15 @@ export interface Transaction {
   styleUrl: './transaction-form.component.css'
 })
 export class TransactionFormComponent {
-  @Output() onAddTransaction = new EventEmitter<Omit<Transaction, 'id' | 'date'>>();
+  @Output() onAddTransaction = new EventEmitter<Omit<Movimentacao, 'id' | 'date'>>();
 
   transactionOptions = [
     { label: 'Selecione...', value: '' },
-    { label: 'Depósito', value: 'Depósito' },
-    { label: 'Transferência', value: 'Transferência' },
+    { label: 'Depósito', value: TipoMovimentacao.DEPOSITO },
+    { label: 'Transferência', value: TipoMovimentacao.TRANSFERENCIA },
   ];
 
-  transactionType: string = '';
+  transactionType: TipoMovimentacao | '' = '';
   value: string = '';
   errorMessage: string | null = null;
 
@@ -46,7 +40,7 @@ export class TransactionFormComponent {
       return;
     }
 
-    const finalAmount = (this.transactionType === 'Transferência') ? -Math.abs(amount) : Math.abs(amount);
+    const finalAmount = (this.transactionType === TipoMovimentacao.TRANSFERENCIA) ? -Math.abs(amount) : Math.abs(amount);
     this.onAddTransaction.emit({ type: this.transactionType, amount: finalAmount });
     this.transactionType = '';
     this.value = '';

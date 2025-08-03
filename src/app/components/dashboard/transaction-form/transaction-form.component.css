@@ -8,8 +8,8 @@
   position: relative; /* Essencial para que overflow: hidden funcione corretamente e para contextos de posicionamento */
   overflow: hidden;   /* Garante que as imagens não "vazem" para fora das bordas do formulário */
   background-image:
-    url('/image-top-right.svg'),
-    url('/image-bottom-left.svg');
+    url('../../../../assets/images/image-top-right.svg'),
+    url('../../../../assets/images/image-bottom-left.svg');
   background-position:
     top right,
     bottom left;

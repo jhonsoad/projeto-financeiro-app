@@ -2,92 +2,25 @@
   <div class="header">
     <h3 class="title">Extrato</h3>
   </div>
-  <div class="statementList">
-    <ng-container *ngIf="items.length > 0; else noTransactions">
-      <div *ngFor="let item of items" [attr.data-key]="item.id" class="statementItem">
-        <span class="itemMonth">{{ getMonthName(item.date) }}</span>
-        <div class="itemsTypeDate">
-          <p class="itemType">{{ item.type }}</p>
-          <p class="itemDate">{{ item.date }}</p>
-        </div>
-        <div class="itemAmountActions">
-          <p class="itemAmount" [class.negative]="item.amount < 0">
-            {{ item.amount < 0 ? `- R$` : `R$` }} {{ (getAbsolute(item.amount) | number: '1.2-2') ?? '' | replaceComma }}
-          </p>
-          <div class="itemActions">
-            <button
-              (click)="handleEditClick(item)"
-              class="actionButton"
-              title="Editar transação"
-            >
-              <img src="/icon-edit.svg" alt="Editar" width="20" height="20" />
-            </button>
-            <button
-              (click)="handleDeleteClick(item.id)"
-              class="actionButton"
-              title="Deletar transação"
-            >
-              <img src="/icon-trash.svg" alt="Deletar" width="20" height="20" />
-            </button>
-          </div>
-        </div>
-        <hr class="hr"/>
-      </div>
-    </ng-container>
-    <ng-template #noTransactions>
-      <p class="noTransactionsMessage">Nenhuma transação encontrada.</p>
-    </ng-template>
-  </div>
 
-  <app-modal *ngIf="isEditModalOpen" [isOpen]="isEditModalOpen" (onClose)="handleCloseEditModal()" title="Editar Transação">
-    <form (ngSubmit)="handleSaveEdit()" class="editForm">
-      <app-input
-        label="Valor"
-        type="text"
-        placeholder="00,00"
-        [(ngModel)]="editAmount"
-        name="editAmount"
-      ></app-input>
+  <app-statement-list
+    (onEditRequest)="onEditRequest($event)"
+    
+  ></app-statement-list> 
+  <!-- (onDeleteRequest)="onDeleteRequest($event)" -->
 
-      <div class="modalActions">
-        <app-button type="button" variant="secondary" (click)="handleCloseEditModal()">
-          Cancelar
-        </app-button>
-        <app-button type="submit" variant="primary">
-          Salvar Alterações
-        </app-button>
-      </div>
-    </form>
-  </app-modal>
+  <!-- Agora usamos os dois novos componentes de modal -->
+  <app-edit-transaction-modal
+    [isEditModalOpen]="isEditModalOpen"
+    [transactionToEdit]="transactionToEdit"
+    (onClose)="closeEditModal()"
+    (onEditComplete)="onEditComplete($event)"
+  ></app-edit-transaction-modal>
 
-  <app-modal *ngIf="isDeleteModalOpen && transactionToDeleteDetails" [isOpen]="isDeleteModalOpen" (onClose)="handleCloseDeleteModal()" title="Confirmar Exclusão">
-    <div class="deleteConfirmationContent">
-      <p class="deleteConfirmationtext">
-        Você tem certeza que deseja deletar a seguinte transação?
-      </p>
-      <div class="deleteConfirmationContentText">
-        <p>
-          <strong>Tipo:</strong> {{ transactionToDeleteDetails.type }}
-        </p>
-        <p>
-          <strong>Valor:</strong>
-          <span [class.negative]="transactionToDeleteDetails.amount < 0">
-            {{ transactionToDeleteDetails.amount < 0 ? `- R$` : `R$` }}
-            {{ (getAbsolute(transactionToDeleteDetails.amount) | number: '1.2-2') ?? '' | replaceComma }}
-          </span>
-        </p>
-        <p>
-          <strong>Data:</strong> {{ transactionToDeleteDetails.date }}
-        </p>
-      </div>
-      <div class="modalActions">
-        <app-button type="button" variant="secondary" (click)="handleCloseDeleteModal()">
-          Cancelar
-        </app-button>
-        <app-button type="button" variant="danger" (click)="handleConfirmDelete()">
-          Excluir
-        </app-button>
-      </div>
-    </div>
-  </app-modal>
+  <app-delete-transaction-modal
+    [isDeleteModalOpen]="isDeleteModalOpen"
+    [transactionToDelete]="transactionToDelete"
+    (onClose)="closeDeleteModal()"
+    (onDeleteConfirm)="onDeleteConfirm($event)"
+  ></app-delete-transaction-modal>
 </div>

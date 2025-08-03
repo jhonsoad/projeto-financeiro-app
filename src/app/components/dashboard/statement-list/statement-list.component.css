@@ -1,0 +1,121 @@
+.card {
+  background-color: var(--color-bg-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  min-width: 300px;
+  flex-grow: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-tertiary);
+  padding-bottom: var(--spacing-sm);
+}
+
+.title {
+  font-size: var(--font-size-title-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+}
+
+/* Icones do lado titulo do extrato */
+/* .actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: 1;
+} */
+
+.statementList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg)
+}
+
+.noTransactionsMessage {
+  text-align: center;
+  color: var(--color-gray-500);
+  padding: 20px;
+}
+
+
+.statementItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hr {
+  background-color: #47A13880;
+  border: none;
+  height: 1px;
+  width: 180px;
+}
+
+.itemMonth {
+  font-size: var(--font-size-text-small);
+  color: var(--color-quinary);
+  font-weight: var(--font-weight-medium);
+}
+
+.itemsTypeDate {
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemType {
+  font-size: var(--font-size-text);
+  color: black;
+  font-weight: var(--font-weight-regular);
+}
+
+.itemDate {
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-gray);
+}
+
+.itemAmountActions {
+  display: flex;
+}
+
+.itemAmount {
+  font-size: var(--font-size-text);
+  font-weight: var(--font-weight-medium);
+  color: black
+}
+
+.itemAmount.negative {
+  color: var(--color-secondary); /* Laranja para valores negativos (transferência) */
+}
+
+.itemActions {
+  display: flex;
+  gap:10px;
+  margin-left: auto;
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.actionButton:hover {
+  background-color: var(--color-gray-100); /* Exemplo de cor de hover */
+}
+
+.actionButton:hover img {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
