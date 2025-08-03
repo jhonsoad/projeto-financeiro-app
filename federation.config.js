@@ -6,7 +6,8 @@ module.exports = withNativeFederation({
 
   exposes: {
     // './Component': './src/app/app.component.ts',
-    './Component': './src/app/pages/home/home.component.ts',
+    './Component': './src/app/pages/dashboard/inicio/inicio.component.ts',
+    // './Component': './src/app/pages/home/home.component.ts',
   },
 
   shared: {
@@ -23,5 +24,5 @@ module.exports = withNativeFederation({
 
   // Please read our FAQ about sharing libs:
   // https://shorturl.at/jmzH0
-  
+
 });
