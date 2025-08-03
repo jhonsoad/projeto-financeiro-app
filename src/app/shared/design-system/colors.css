@@ -1,5 +1,4 @@
 :root {
-
   --color-secondary: #FF5031; /* laranja */
   --color-tertiary: #DEE9EA; /* cinza claro */
   --color-quaternary: #F8F8F8; /* quase branco */
@@ -14,5 +13,4 @@
   --color-text-dark: #444444; /* Cor comum para texto escuro */
   --color-text-light: #666666; /* Cor comum para texto mais claro */
   --color-gray: #8B8B8B;
-  
 }
