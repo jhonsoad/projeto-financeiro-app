@@ -1,0 +1,30 @@
+<app-modal *ngIf="isDeleteModalOpen && transactionToDelete" [isOpen]="isDeleteModalOpen" (onClose)="onClose.emit()" title="Confirmar Exclusão">
+  <div class="deleteConfirmationContent">
+    <p class="deleteConfirmationtext">
+      Você tem certeza que deseja deletar a seguinte transação?
+    </p>
+    <div class="deleteConfirmationContentText">
+      <p>
+        <strong>Tipo:</strong> {{ transactionToDelete.movementType }}
+      </p>
+      <p>
+        <strong>Valor:</strong>
+        <span [class.negative]="transactionToDelete.amount < 0">
+          {{ transactionToDelete.amount < 0 ? `- R$` : `R$` }}
+          {{ (getAbsolute(transactionToDelete.amount) | number: '1.2-2') ?? '' }}
+        </span>
+      </p>
+      <p>
+        <strong>Data:</strong> {{ transactionToDelete.date }}
+      </p>
+    </div>
+    <div class="modalActions">
+      <app-button type="button" variant="secondary" (click)="onClose.emit()">
+        Cancelar
+      </app-button>
+      <app-button type="button" variant="danger" (click)="handleConfirmDelete()">
+        Excluir
+      </app-button>
+    </div>
+  </div>
+</app-modal>

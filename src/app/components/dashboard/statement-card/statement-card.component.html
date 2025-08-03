@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="header">
+    <h3 class="title">Extrato</h3>
+  </div>
+
+  <app-statement-list
+    (onEditRequest)="onEditRequest($event)"
+    (onDeleteRequest)="onDeleteRequest($event)"
+  ></app-statement-list>
+
+  <app-edit-transaction-modal
+    [isEditModalOpen]="isEditModalOpen"
+    [transactionToEdit]="transactionToEdit"
+    (onClose)="closeEditModal()"
+    (onEditComplete)="onEditComplete($event)"
+  ></app-edit-transaction-modal>
+
+  <app-delete-transaction-modal
+    [isDeleteModalOpen]="isDeleteModalOpen"
+    [transactionToDelete]="transactionToDelete"
+    (onClose)="closeDeleteModal()"
+    (onDeleteConfirm)="onDeleteConfirm($event)"
+  ></app-delete-transaction-modal>
+</div>

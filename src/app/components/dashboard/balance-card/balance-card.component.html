@@ -1,0 +1,13 @@
+<div class="card">
+  <h2 class="greeting">{{ greeting }}</h2>
+  <p class="date">{{ dataAtual | date: 'dd/MM/yyyy' }}</p>
+  <div class="balanceInfo">
+    <div class="balanceSaldo">
+      <p class="balanceLabel">Saldo</p>
+      <img [src]="baseUrl + '/assets/icons/icon-olho.svg'" alt="icone de um olho" width="20" height="20" />
+    </div>
+    <hr class="balanceHr"/>
+    <p class="accountType">{{ accountType }}</p>
+    <span class="balanceValue">R$ {{ saldo$ | async | currency: 'BRL' }}</span>
+  </div>
+</div>

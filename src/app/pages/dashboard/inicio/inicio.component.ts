@@ -1,17 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { GetSaldoService } from '../../../services/get-saldo-conta/get-saldo-conta.service';
 import { loadMoviments } from '../../../shared/store/transaction.actions';
 import { Movement } from '../../../shared/interfaces/finance.interface';
 import { selectMovimentacoes } from '../../../shared/store/transaction.selectors';
+import { SidebarComponent } from '../../../components/dashboard/sidebar/sidebar.component';
+import { CommonModule } from '@angular/common';
+import { BalanceCardComponent } from '../../../components/dashboard/balance-card/balance-card.component';
+import { TransactionFormComponent } from '../../../components/dashboard/transaction-form/transaction-form.component';
+import { StatementCardComponent } from '../../../components/dashboard/statement-card/statement-card.component';
 
 @Component({
   selector: 'app-inicio',
-  imports: [],
+  imports: [CommonModule, SidebarComponent, BalanceCardComponent, TransactionFormComponent, StatementCardComponent],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css'
 })
-export class InicioComponent {
+export class InicioComponent implements OnInit {
 
     constructor(
     private store: Store,

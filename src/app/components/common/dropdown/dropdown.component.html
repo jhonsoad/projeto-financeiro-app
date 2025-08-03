@@ -1,0 +1,16 @@
+<div class="dropdownGroup">
+  <label *ngIf="label" [for]="selectId" class="label">{{ label }}</label>
+  <select
+    [id]="selectId"
+    [name]="name"
+    [disabled]="disabled"
+    [class]="'dropdown ' + className"
+    [ngModel]="value"
+    (ngModelChange)="onChange($event)"
+    (blur)="onTouched()"
+  >
+    <option *ngFor="let option of options" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+</div>
