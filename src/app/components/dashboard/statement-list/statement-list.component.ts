@@ -18,15 +18,15 @@ export class StatementListComponent implements OnInit {
   @Output() onEditRequest = new EventEmitter<Movimentacao>();
   @Output() onDeleteRequest = new EventEmitter<number>();
 
-  // transacoes$: Observable<Movimentacao[]> = of([]);
+  transacoes$: Observable<Movimentacao[]> = of([]);
 
   constructor(private store: Store) {}
 
   ngOnInit(): void {
     // A lógica de busca e formatação dos dados fica aqui, longe do componente pai
-    // this.transacoes$ = this.store.select(selectMovimentacoes).pipe(
-    //   map(movimentacoes => movimentacoes.slice(-8).reverse())
-    // );
+    this.transacoes$ = this.store.select(selectMovimentacoes).pipe(
+      map(movimentacoes => movimentacoes.slice(-8).reverse())
+    );
   }
 
   // Métodos de formatação

@@ -19,8 +19,8 @@
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
-    "@ngrx/store": "^19.2.1",
-    "@ngrx/store-devtools": "^19.2.1",
+    "@ngrx/store": "^19.2.0",
+    "@ngrx/store-devtools": "^19.2.0",
     "@softarc/native-federation-node": "^2.0.10",
     "es-module-shims": "^1.5.12",
     "rxjs": "~7.8.0",
@@ -38,6 +38,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.7.2"
+    "typescript": "~5.8.3"
   }
 }

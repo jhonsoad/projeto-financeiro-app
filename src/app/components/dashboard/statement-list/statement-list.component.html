@@ -1,4 +1,4 @@
-<!-- <div class="statementList">
+<div class="statementList">
   <ng-container *ngIf="transacoes$ | async as transacoes; else noTransactions">
     <div *ngFor="let item of transacoes" [attr.data-key]="item.id" class="statementItem">
       <span class="itemMonth">{{ getMonthName(item.date) }}</span>
@@ -33,4 +33,4 @@
   <ng-template #noTransactions>
     <p class="noTransactionsMessage">Nenhuma transação encontrada.</p>
   </ng-template>
-</div> -->
+</div>
