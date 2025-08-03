@@ -8,10 +8,11 @@ import { SidebarComponent } from '../../../components/dashboard/sidebar/sidebar.
 import { CommonModule } from '@angular/common';
 import { BalanceCardComponent } from '../../../components/dashboard/balance-card/balance-card.component';
 import { TransactionFormComponent } from '../../../components/dashboard/transaction-form/transaction-form.component';
+import { StatementCardComponent } from '../../../components/dashboard/statement-card/statement-card.component';
 
 @Component({
   selector: 'app-inicio',
-  imports: [CommonModule, SidebarComponent, BalanceCardComponent, TransactionFormComponent],
+  imports: [CommonModule, SidebarComponent, BalanceCardComponent, TransactionFormComponent, StatementCardComponent],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css'
 })

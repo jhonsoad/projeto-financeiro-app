@@ -1,0 +1,20 @@
+<app-modal *ngIf="isEditModalOpen" [isOpen]="isEditModalOpen" (onClose)="onClose.emit()" title="Editar Transação">
+  <form (ngSubmit)="handleSaveEdit()" class="editForm">
+    <app-input
+      label="Valor"
+      type="text"
+      placeholder="00,00"
+      [(ngModel)]="editAmount"
+      name="editAmount"
+    ></app-input>
+
+    <div class="modalActions">
+      <app-button type="button" variant="secondary" (click)="onClose.emit()">
+        Cancelar
+      </app-button>
+      <app-button type="submit" variant="primary">
+        Salvar Alterações
+      </app-button>
+    </div>
+  </form>
+</app-modal>
