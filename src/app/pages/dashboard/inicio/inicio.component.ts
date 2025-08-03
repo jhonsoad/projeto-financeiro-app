@@ -6,10 +6,11 @@ import { Movement } from '../../../shared/interfaces/finance.interface';
 import { selectMovimentacoes } from '../../../shared/store/transaction.selectors';
 import { SidebarComponent } from '../../../components/dashboard/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
+import { BalanceCardComponent } from '../../../components/dashboard/balance-card/balance-card.component';
 
 @Component({
   selector: 'app-inicio',
-  imports: [CommonModule, SidebarComponent],
+  imports: [CommonModule, SidebarComponent, BalanceCardComponent],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css'
 })
