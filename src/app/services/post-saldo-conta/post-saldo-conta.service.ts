@@ -13,7 +13,7 @@ export class PostSaldoService {
 
   constructor(private http: HttpClient) {}
 
-  adicionarTransacao(movimentcao: Movement): Observable<Movement> {
-    return this.http.post<Movement>(`${this.apiUrl}/finance`, movimentcao)
+  adicionarTransacao(movimentacao: Movement): Observable<Movement> {
+    return this.http.post<Movement>(`${this.apiUrl}/finance`, movimentacao)
   }
 }

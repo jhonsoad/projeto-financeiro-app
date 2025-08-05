@@ -53,15 +53,17 @@ export class TransactionFormComponent {
 
     const finalAmount = (this.transactionType === MovementType.TRANSFERENCIA) ? -Math.abs(amount) : Math.abs(amount);
 
-    // A API json-server irá gerar o `id` e a `date`
+    const now = new Date();
+    const dateString = now.toISOString().split('T')[0];
+
     const newTransaction = {
       movementType: this.transactionType,
-      amount: finalAmount
+      amount: finalAmount,
+      date: dateString,
     } as Movement;
 
     this.postSaldoService.adicionarTransacao(newTransaction).subscribe({
       next: (movimento) => {
-        // Despacha a ação com a transação completa retornada pela API
         this.store.dispatch(addTrasaction({ movement: movimento }));
         this.transactionType = '';
         this.value = '';

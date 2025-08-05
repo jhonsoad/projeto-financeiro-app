@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { addTrasaction, loadMoviments } from "./transaction.actions";
+import { addTrasaction, loadMoviments, deleteTransaction, editTransactionSuccess } from "./transaction.actions";
 import { MovementType } from "../enum/tipo-movimentacao.enum";
 import { Movement } from "../interfaces/finance.interface";
 
@@ -21,6 +21,14 @@ export const transactionReducer = createReducer(
   on(addTrasaction, (state, { movement }) => ({
     ...state,
     movimentacoes: [...state.movimentacoes, movement]
+  })),
+  on(editTransactionSuccess, (state, { transaction }) => ({
+    ...state,
+    movimentacoes: state.movimentacoes.map(mov => mov.id === transaction.id ? transaction : mov)
+  })),
+  on(deleteTransaction, (state, { id }) => ({
+    ...state,
+    movimentacoes: state.movimentacoes.filter(mov => mov.id !== id)
   }))
 )
 

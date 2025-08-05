@@ -16,6 +16,16 @@ export const editTransaction = createAction(
   props<{ transaction: Movement }>()
 );
 
+export const editTransactionSuccess = createAction(
+  '[Transacao] Edição de Transação Sucesso',
+  props<{ transaction: Movement }>()
+);
+
+export const editTransactionFailure = createAction(
+  '[Transacao] Edição de Transação Falha',
+  props<{ error: any }>()
+);
+
 export const deleteTransaction = createAction(
   '[Transacao] Deletar Transação',
   props<{ id: number }>()
