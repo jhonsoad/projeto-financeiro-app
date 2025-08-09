@@ -1,10 +1,15 @@
 <div class="dashboardLayout">
   <app-sidebar activeLink="Inicio" />
   <div class="cardsFlex">
-    <app-balance-card/>
-    <app-transaction-form/>
+    <app-balance-card [balance]="saldoTotal" />
+    <app-transaction-form
+     (transactionAdded)="onTransactionAdded()"
+     [accountId]="accountId"/>
   </div>
-  <div class="newTransactionSection">
-    <app-statement-card/>
+  <div *ngIf="!error" class="newTransactionSection">
+    <app-statement-card [transactions]="transactions"/>
+  </div>
+  <div *ngIf="error">
+    <p>Ocorreu um erro ao carregar os dados.</p>
   </div>
 </div>

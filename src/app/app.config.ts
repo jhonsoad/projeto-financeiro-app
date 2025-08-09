@@ -1,20 +1,20 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, isDevMode, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideStore } from '@ngrx/store';
 import { routes } from './app.routes';
-import { transactionReducer } from './shared/store/transaction.reducer';
-import { provideHttpClient } from '@angular/common/http';
-import { TransactionEffects } from './shared/store/transaction.effects';
-import { provideEffects } from '@ngrx/effects';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { AuthInterceptor } from './core/auth-interceptor/auth.interceptor';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(),
-    provideStore({
-      transacao: transactionReducer
-    }),
-    provideEffects([TransactionEffects])
+    provideHttpClient(withInterceptorsFromDi()),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
   ]
 };

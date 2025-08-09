@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Movement } from "../../shared/interfaces/finance.interface";
 import { environment } from "../../../environments/environment";
+import { Transaction } from "../../shared/interfaces/account.interface";
 
 
 @Injectable({
@@ -13,7 +13,7 @@ export class PostSaldoService {
 
   constructor(private http: HttpClient) {}
 
-  adicionarTransacao(movimentacao: Movement): Observable<Movement> {
-    return this.http.post<Movement>(`${this.apiUrl}/finance`, movimentacao)
+  addTransaction(movimentacao: Transaction): Observable<Transaction> {
+    return this.http.post<Transaction>(`${this.apiUrl}/account/transaction`, movimentacao)
   }
 }

@@ -5,13 +5,13 @@
     </p>
     <div class="deleteConfirmationContentText">
       <p>
-        <strong>Tipo:</strong> {{ transactionToDelete.movementType }}
+        <strong>Tipo:</strong> {{ transactionToDelete.type }}
       </p>
       <p>
         <strong>Valor:</strong>
-        <span [class.negative]="transactionToDelete.amount < 0">
-          {{ transactionToDelete.amount < 0 ? `- R$` : `R$` }}
-          {{ (getAbsolute(transactionToDelete.amount) | number: '1.2-2') ?? '' }}
+        <span [class.negative]="transactionToDelete.value < 0">
+          {{ transactionToDelete.value < 0 ? `- R$` : `R$` }}
+          {{ (getAbsolute(transactionToDelete.value) | number: '1.2-2') ?? '' }}
         </span>
       </p>
       <p>

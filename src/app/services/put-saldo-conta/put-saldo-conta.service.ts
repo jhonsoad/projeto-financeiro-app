@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Movement } from '../../shared/interfaces/finance.interface';
 import { Observable } from 'rxjs/internal/Observable';
+import { Transaction } from '../../shared/interfaces/account.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,8 @@ export class PutSaldoContaService {
 
   constructor(private http: HttpClient) {}
 
-  updateTransaction(transaction: Movement): Observable<Movement> {
-    return this.http.put<Movement>(`${this.apiUrl}/finance/${transaction.id}`, transaction);
+  updateTransaction(transaction: Transaction): Observable<Transaction> {
+    const url = `${this.apiUrl}/account/transaction/${transaction.id}`
+    return this.http.put<Transaction>(url, transaction);
   }
 }

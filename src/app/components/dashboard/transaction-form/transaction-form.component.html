@@ -8,11 +8,11 @@
   ></app-dropdown>
   <app-input
     label="Valor"
-    type="text"
+    type="number"
     step="0.01"
     placeholder="00,00"
-    [value]="value"
-    (input)="handleValueChange($event)"
+    [(ngModel)]="value"
+    name="value"
   ></app-input>
   <app-button type="submit" variant="secondary" class="submitButton">
     Concluir transação
