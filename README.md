@@ -1,59 +1,80 @@
-# ProjetoFinanceiro
+🚀 MFE1 - Nome do MFE (Ex: Gerenciamento de Contas)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+🎯 Sobre o Projeto
+Este repositório contém o Micro Frontend (MFE) "MFE1" da aplicação de gerenciamento financeiro ByteBank. O objetivo deste projeto é fornecer uma funcionalidade específica e modular que é consumida pelo projeto Host. Este MFE opera de forma independente, o que permite que ele seja desenvolvido, testado e implantado separadamente, mas se integra perfeitamente à aplicação principal.
 
-## Development server
+As responsabilidades deste MFE incluem:
 
-To start a local development server, run:
+Funcionalidade Específica: "Exibir o saldo da conta, o extrato detalhado e permitir a visualização de transações recentes. Realizar transações financeiras de debito e crédito"
 
-```bash
-ng serve
-```
+Componentes Expostos: o federation.config.js expõe o componente ./Component que aponta para inicio.component.ts.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+🏛️ Arquitetura e Tecnologias
+A arquitetura do projeto é baseada em Micro Frontends (MFEs), utilizando a biblioteca @angular-architects/native-federation para a orquestração dos módulos, similar ao projeto host.
 
-## Code scaffolding
+Tecnologias Principais:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Angular v19.2.0: O framework principal para o desenvolvimento da aplicação.
 
-```bash
-ng generate component component-name
-```
+Angular CLI: Ferramenta de linha de comando para inicializar, desenvolver e manter aplicações Angular.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+RxJS: Para programação reativa.
 
-```bash
-ng generate --help
-```
+@angular-architects/native-federation: Ferramenta para gerenciar a federação de módulos.
 
-## Building
+TypeScript: Superset do JavaScript que adiciona tipagem estática, garantindo maior robustez e manutenibilidade ao código.
 
-To build the project run:
 
-```bash
-ng build
-```
+📁 Estrutura de Pastas e Organização
+A estrutura do projeto segue as convenções padrão do Angular, com uma organização clara e modular para facilitar a manutenção e o desenvolvimento.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+src/app/: Contém a lógica principal da aplicação.
 
-## Running unit tests
+components/: Armazena componentes reutilizáveis, categorizados por funcionalidade (e.g., dashboard, common).
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+dashboard/: Componentes específicos para a área do dashboard, como sidebar, balance-card, statement-card, transaction-form, etc.
 
-```bash
-ng test
-```
+common/: Componentes genéricos e reutilizáveis em toda a aplicação, como button, input e dropdown.
 
-## Running end-to-end tests
+core/: Contém serviços e lógicas de baixo nível, como o AuthInterceptor para manipulação de requisições HTTP.
 
-For end-to-end (e2e) testing, run:
+pages/: Agrupa os componentes de "página" que representam rotas, como o InicioComponent dentro de dashboard.
 
-```bash
-ng e2e
-```
+services/: Contém os serviços responsáveis pela comunicação com a API (e.g., AccountService, PostSaldoService, DeleteTransactionService).
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+shared/: Armazena interfaces e outros recursos compartilhados pela aplicação, como as interfaces Account, Transaction e Card.
 
-## Additional Resources
+design-system/: Arquivos CSS de estilização global e variáveis de design.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+data/: Contém o arquivo db.json utilizado pelo json-server para simular uma API local.
+
+environments/: Contém as configurações de ambiente, como a URL da API.
+
+package.json: Lista as dependências do projeto, tanto de produção quanto de desenvolvimento, e scripts para executar tarefas como start, build e test. Ele também define o nome do projeto como "projeto-financeiro".
+
+angular.json: Arquivo de configuração principal do Angular CLI, que define a estrutura do projeto, as configurações de build, serve e teste, incluindo a configuração do esbuild e o builder de native-federation.
+
+federation.config.js: Arquivo de configuração para o native-federation, onde são definidos quais componentes o projeto expõe (neste caso, o InicioComponent) e quais dependências são compartilhadas.
+
+
+⚙️ Como Começar
+Siga estas instruções para configurar e executar o projeto localmente:
+
+Pré-requisitos
+Node.js (versão compatível com Angular 19.2.0)
+
+Angular CLI
+
+Instalação
+Clone este repositório.
+
+Navegue até o diretório do projeto.
+
+Instale as dependências: npm install
+
+Execução
+Para executar o projeto MFE1 em modo de desenvolvimento:
+
+ng serve --port 4201
+
+Isso iniciará o servidor de desenvolvimento na porta 4201.
