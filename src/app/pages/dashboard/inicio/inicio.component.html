@@ -7,7 +7,7 @@
      [accountId]="accountId"/>
   </div>
   <div *ngIf="!error" class="newTransactionSection">
-    <app-statement-card [transactions]="transactions"/>
+    <app-statement-card [transactions]="transactions" [accountId]="accountId"/>
   </div>
   <div *ngIf="error">
     <p>Ocorreu um erro ao carregar os dados.</p>
