@@ -1,10 +1,7 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Movement } from '../../../shared/interfaces/finance.interface';
-import { map, Observable, of } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { selectMovimentacoes } from '../../../shared/store/transaction.selectors';
 import { environment } from '../../../../environments/environment';
+import { Transaction } from '../../../shared/interfaces/account.interface';
 
 @Component({
   selector: 'app-statement-list',
@@ -13,21 +10,14 @@ import { environment } from '../../../../environments/environment';
   templateUrl: './statement-list.component.html',
   styleUrl: './statement-list.component.css'
 })
-export class StatementListComponent implements OnInit {
+export class StatementListComponent {
 
-  @Output() onEditRequest = new EventEmitter<Movement>();
-  @Output() onDeleteRequest = new EventEmitter<number>();
+  @Input() transactions: Transaction[] | null = [];
+  
+  @Output() onEditRequest = new EventEmitter<Transaction>();
+  @Output() onDeleteRequest = new EventEmitter<string>();
 
-  transacoes$: Observable<Movement[]> = of([]);
   baseUrl = environment.remoteBaseUrl;
-
-  constructor(private store: Store) {}
-
-  ngOnInit(): void {
-    this.transacoes$ = this.store.select(selectMovimentacoes).pipe(
-      map(movimentacoes => movimentacoes.slice(-8).reverse())
-    );
-  }
 
   capitalizeFirstLetter(string: string): string {
     if (!string) return '';
@@ -47,11 +37,11 @@ export class StatementListComponent implements OnInit {
     return Math.abs(value);
   }
 
-  handleEditClick(item: Movement): void {
-    this.onEditRequest.emit(item);
+  handleEditClick(transaction: Transaction) {
+    this.onEditRequest.emit(transaction);
   }
 
-  handleDeleteClick(id: number): void {
+  handleDeleteClick(id: string) {
     this.onDeleteRequest.emit(id);
   }
 }

@@ -483,7 +483,7 @@
     {
       "id": "9713",
       "movementType": "DEPOSITO",
-      "amount": 1,
+      "amount": 2,
       "date": "2025-07-26"
     },
     {
@@ -495,28 +495,20 @@
     {
       "id": "281",
       "movementType": "DEPOSITO",
-      "amount": 100,
+      "amount": 23,
       "date": "2025-07-26"
     },
     {
-      "id": "e710",
+      "id": "fa11",
       "movementType": "DEPOSITO",
-      "amount": 50
+      "amount": 33,
+      "date": "2025-08-05"
     },
     {
-      "id": "1835",
+      "id": "846f",
       "movementType": "TRANSFERENCIA",
-      "amount": -10
-    },
-    {
-      "id": "3358",
-      "movementType": "DEPOSITO",
-      "amount": 10
-    },
-    {
-      "id": "f97e",
-      "movementType": "TRANSFERENCIA",
-      "amount": -200
+      "amount": -10,
+      "date": "2025-08-05"
     }
   ]
 }

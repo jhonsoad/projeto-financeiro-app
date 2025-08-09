@@ -8,6 +8,6 @@
     </div>
     <hr class="balanceHr"/>
     <p class="accountType">{{ accountType }}</p>
-    <span class="balanceValue">R$ {{ saldo$ | async | currency: 'BRL' }}</span>
+    <span class="balanceValue">R$ {{ balance | currency: 'BRL' }}</span>
   </div>
 </div>

@@ -5,7 +5,9 @@
     [type]="type"
     [placeholder]="placeholder"
     [class]="'input ' + className"
-    [value]="value"
-    (input)="onInput($event)"
+    [(ngModel)]="value"
+    [disabled]="disabled"
+    (blur)="onTouched()"
+    (input)="handleInput($event)"
   />
 </div>

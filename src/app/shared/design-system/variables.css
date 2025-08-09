@@ -1,0 +1,10 @@
+:root {
+  /* Alturas de Linha (Line Heights) */
+  --line-height-body: 100%;
+  --line-height-heading: 120%;
+
+    /* Outros */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+}

@@ -4,6 +4,7 @@
   </div>
 
   <app-statement-list
+    [transactions]="transactions"
     (onEditRequest)="onEditRequest($event)"
     (onDeleteRequest)="onDeleteRequest($event)"
   ></app-statement-list>

@@ -1,81 +1,66 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { DropdownComponent } from '../../common/dropdown/dropdown.component';
-import { InputComponent } from '../../common/input/input.component';
 import { ButtonComponent } from '../../common/button/button.component';
-import { Movement } from '../../../shared/interfaces/finance.interface';
-import { MovementType } from '../../../shared/enum/tipo-movimentacao.enum';
-import { environment } from '../../../../environments/environment';
-import { Store } from '@ngrx/store';
-import { addTrasaction } from '../../../shared/store/transaction.actions';
+import { InputComponent } from '../../common/input/input.component';
+import { tap, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 import { PostSaldoService } from '../../../services/post-saldo-conta/post-saldo-conta.service';
+import { Transaction, TransactionType } from '../../../shared/interfaces/account.interface';
+import { DropdownComponent } from '../../common/dropdown/dropdown.component';
 
 @Component({
   selector: 'app-transaction-form',
   standalone: true,
-  imports: [CommonModule, FormsModule, DropdownComponent, InputComponent, ButtonComponent],
+  imports: [ButtonComponent, InputComponent, CommonModule, FormsModule, DropdownComponent],
   templateUrl: './transaction-form.component.html',
   styleUrl: './transaction-form.component.css'
 })
 export class TransactionFormComponent {
+  @Input() accountId!: string;
+  tipoMovimentacao: TransactionType = TransactionType.Credit;
+  tipoMovimentacaoEnum = TransactionType;
+  errorMessage: string | null = null;
+
+  private postSaldoService = inject(PostSaldoService);
+
+  @Output() transactionAdded = new EventEmitter<void>();
 
   transactionOptions = [
-    { label: 'Selecione...', value: '' },
-    { label: 'Depósito', value: MovementType.DEPOSITO },
-    { label: 'Transferência', value: MovementType.TRANSFERENCIA },
+    { value: TransactionType.Credit, label: 'Crédito' },
+    { value: TransactionType.Debit, label: 'Débito' },
   ];
-
-  transactionType: MovementType | '' = '';
-  value: string = '';
-  errorMessage: string | null = null;
-  baseUrl = environment.remoteBaseUrl;
-
-  constructor(
-    private postSaldoService: PostSaldoService,
-    private store: Store
-  ) {}
+  transactionType: TransactionType = TransactionType.Credit;
+  value: number | null = null;
 
   handleSubmit(): void {
-    this.errorMessage = null;
-
-    if (!this.transactionType || !this.value) {
-      this.errorMessage = 'Por favor, selecione o tipo e insira o valor.';
+    if (this.value === null) {
+       this.errorMessage = 'Por favor, selecione o tipo e insira o valor.';
       return;
     }
 
-    const amount = parseFloat(this.value.replace(',', '.'));
+    const valorTransacao = this.transactionType === TransactionType.Debit
+      ? -Math.abs(this.value)
+      : Math.abs(this.value);
 
-    if (isNaN(amount)) {
-      this.errorMessage = 'Por favor, insira um valor numérico válido.';
-      return;
-    }
+    const newTransaction: Transaction = {
+      id: '',
+      accountId: this.accountId,
+      type: this.transactionType,
+      date: new Date().toISOString(),
+      value: valorTransacao
+    };
 
-    const finalAmount = (this.transactionType === MovementType.TRANSFERENCIA) ? -Math.abs(amount) : Math.abs(amount);
-
-    // A API json-server irá gerar o `id` e a `date`
-    const newTransaction = {
-      movementType: this.transactionType,
-      amount: finalAmount
-    } as Movement;
-
-    this.postSaldoService.adicionarTransacao(newTransaction).subscribe({
-      next: (movimento) => {
-        // Despacha a ação com a transação completa retornada pela API
-        this.store.dispatch(addTrasaction({ movement: movimento }));
-        this.transactionType = '';
-        this.value = '';
-      },
-      error: (err) => {
-        this.errorMessage = 'Ocorreu um erro ao adicionar a transação.';
-        console.error(err);
-      }
-    });
-  }
-
-  handleValueChange(event: Event): void {
-    const target = event.target as HTMLInputElement;
-    const sanitizedValue = target.value.replace(/[^0-9,.]/g, '');
-    this.value = sanitizedValue;
+    this.postSaldoService.addTransaction(newTransaction).pipe(
+      tap(() => {
+        console.log('Transação adicionada com sucesso!');
+        this.transactionAdded.emit();
+        this.value = null;
+      }),
+      catchError(error => {
+        console.error('Erro ao adicionar transação:', error);
+        return of(null);
+      })
+    ).subscribe();
   }
 }
