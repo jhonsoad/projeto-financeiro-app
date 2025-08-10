@@ -9,7 +9,9 @@
 
 .header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  gap: 2rem;
   align-items: center;
   margin-bottom: var(--spacing-md);
   border-bottom: 1px solid var(--color-tertiary);
@@ -178,4 +180,8 @@
 
 .deleteConfirmationContentText p {
   margin-bottom: 10px;
+}
+
+.dropdown {
+  width: 50%;
 }

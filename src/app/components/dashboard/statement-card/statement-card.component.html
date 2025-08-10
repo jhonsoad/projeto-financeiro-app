@@ -1,10 +1,28 @@
 <div class="card">
   <div class="header">
     <h3 class="title">Extrato</h3>
+    <div class="filters">
+      <!-- <app-input
+        placeholder="Buscar por descrição..."
+        [(ngModel)]="searchQuery"
+        (ngModelChange)="applyFilters()"
+      ></app-input> -->
+
+      <app-dropdown
+        class="dropdown"
+        [options]="[
+          { value: '', label: 'Todos os tipos' },
+          { value: 'Credit', label: 'Crédito' },
+          { value: 'Debit', label: 'Débito' }
+        ]"
+        [(ngModel)]="filterType"
+        (ngModelChange)="applyFilters()"
+      ></app-dropdown>
+    </div>
   </div>
 
   <app-statement-list
-    [transactions]="transactions"
+    [transactions]="filteredTransactions"
     (onEditRequest)="onEditRequest($event)"
     (onDeleteRequest)="onDeleteRequest($event)"
   ></app-statement-list>

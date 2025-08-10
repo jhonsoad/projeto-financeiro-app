@@ -27,8 +27,8 @@ export class DropdownComponent {
   @Input() className: string = '';
   @Input() name: string = '';
   @Input() disabled: boolean = false;
+  @Input() value: string = '';
 
-  value: string = '';
   onChange: any = () => {};
   onTouched: any = () => {};
 
