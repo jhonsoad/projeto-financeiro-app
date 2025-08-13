@@ -64,10 +64,12 @@ Pré-requisitos
 Node.js (versão compatível com Angular 19.2.0)
 
 Com Docker Construir a imagem:
+docker build -t mfe1-app . 
 
-docker build -t mfe1-app . Executar o container:
+Executar o container:
+docker run -p 4201:4201 mfe1-app
 
-docker run -p 4201:4201 mfe1-app A aplicação estará disponível em http://localhost:4201/index.html.
+A aplicação estará disponível em http://localhost:4201
 
 Sem Docker
 
