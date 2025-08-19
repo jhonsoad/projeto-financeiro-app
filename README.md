@@ -2,7 +2,7 @@
 
 ## 🎯 Sobre o Projeto
 
-Este repositório contém o **Micro Frontend (MFE) "MFE1"**, uma parte integrante da aplicação de gerenciamento financeiro **ByteBank**. O principal objetivo deste MFE é entregar funcionalidades específicas e modulares que são consumidas e orquestradas pelo [Projeto Host](link_para_o_readme_do_host). Operando de forma autônoma, este MFE pode ser desenvolvido, testado e implantado independentemente, garantindo uma integração fluida com a aplicação principal.
+Este repositório contém o **Micro Frontend (MFE) "MFE1"**, uma parte integrante da aplicação de gerenciamento financeiro **ByteBank**. O principal objetivo deste MFE é entregar funcionalidades específicas e modulares que são consumidas e orquestradas pelo [Projeto Host](https://github.com/jhonsoad/projeto-financeiro-host). Operando de forma autônoma, este MFE pode ser desenvolvido, testado e implantado independentemente, garantindo uma integração fluida com a aplicação principal.
 
 ### Responsabilidades Chave deste MFE:
 
